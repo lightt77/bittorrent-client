@@ -9,16 +9,16 @@
 # USEFUL ARTICLES/DOCS:
 # - bittorrent protocol specs: http://bittorrent.org/beps/bep_0003.html
 
-from utils import readTorrentFile
+from utils import read_torrent_file
 
 # sample torrent(from https://webtorrent.io/free-torrents)
 TORRENT_FILE_PATH = "./big-buck-bunny.torrent" 
 
 def main():
     # read torrent file for tracker info
-    torrentFileDict = readTorrentFile(TORRENT_FILE_PATH)
-    trackerUrl = torrentFileDict[b'announce'].decode("utf-8") 
-    print(f"Tracker url from torrent file: {trackerUrl}")
+    torrent_file_dict = read_torrent_file(TORRENT_FILE_PATH)
+    tracker_url = torrent_file_dict[b'announce'].decode("utf-8") 
+    print(f"Tracker url from torrent file: {tracker_url}")
 
 if __name__ == "__main__":
     main()
